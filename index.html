@@ -29,6 +29,9 @@
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
+    <button onclick="fbPixelProductListViewed()">Click me to generate fake Facebook Pixel Product List Viewed Event</button>
+    <button onclick="fbPixelProductViewed()">Click me to generate fake Facebook Pixel Product Viewed Event</button>
+
     <script type="text/javascript">
       function identify(e){
         e.preventDefault();
@@ -44,13 +47,32 @@
             details: details,
         };
 
-console.log(user);
         analytics.identify('5786', {
             email: email, 
             name: fullname
         });
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
+        });
+      }
+        
+      function fbPixelProductListViewed(e){
+        e.preventDefault();
+        analytics.track('Product List Viewed', {
+          list_id: 'dummy_deals_1',
+          category: 'dummyProducts'
+        });
+      }
+        
+      function fbPixelProductViewed(e){
+        e.preventDefault();
+        analytics.track('Product Viewed', {
+          product_id: '109jfg7xx6s000f',
+          sku: 'G-1000',
+          category: 'Super Awesome Products Category',
+          name: 'Monoploy: 3rd Edition',
+          price: 18.99,
+          currency: 'usd'
         });
       }
     </script>
