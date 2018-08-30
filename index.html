@@ -35,6 +35,8 @@
     <script type="text/javascript">
       function identify(e){
         e.preventDefault();
+        console.log(this);
+        console.log('Hack Reactor Clan');
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
