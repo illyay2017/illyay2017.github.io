@@ -56,16 +56,16 @@
         });
       }
         
-      function fbPixelProductListViewed(e){
-        e.preventDefault();
+      function fbPixelProductListViewed(){
+        console.log(this);
         analytics.track('Product List Viewed', {
           list_id: 'dummy_deals_1',
           category: 'dummyProducts'
         });
       }
         
-      function fbPixelProductViewed(e){
-        e.preventDefault();
+      function fbPixelProductViewed(){
+        onsole.log(this);
         analytics.track('Product Viewed', {
           product_id: '109jfg7xx6s000f',
           sku: 'G-1000',
