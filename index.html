@@ -29,8 +29,8 @@
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
-    <button onclick="fbPixelProductListViewed()">Click me to generate fake Facebook Pixel Product List Viewed Event</button>
-    <button onclick="fbPixelProductViewed()">Click me to generate fake Facebook Pixel Product Viewed Event</button>
+    <button onclick="productListViewed()">Click me to generate fake Product List Viewed Event</button>
+    <button onclick="productViewed()">Click me to generate fake Product Viewed Event</button>
 
     <script type="text/javascript">
         
@@ -57,14 +57,14 @@
         });
       }
         
-      function fbPixelProductListViewed(){
+      function productListViewed(){
         analytics.track('Product List Viewed', {
           list_id: 'dummy_deals_1',
           category: 'dummyProducts'
         });
       }
         
-      function fbPixelProductViewed(){
+      function productViewed(){
         analytics.track('Product Viewed', {
           product_id: '109jfg7xx6s000f',
           sku: 'G-1000',
