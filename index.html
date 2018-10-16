@@ -35,6 +35,8 @@
 </form> 
     <button onclick="productListViewed()">Click me to generate fake Product List Viewed Event</button>
     <button onclick="productViewed()">Click me to generate fake Product Viewed Event</button>
+    <button onclick="productAdded()">Product Added Event</button>
+    <button onclick="productRemoved()">Product Removed Event</button>
 
     <script type="text/javascript">
         
@@ -78,6 +80,34 @@
           currency: 'usd'
         });
       }
+
+    function productAdded() {
+      analytics.track('Product Added', {
+        cart_id: 'skdjsidjsdkdj29j',
+        product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
+        sku: 'SF-CG-3-LO-DW',
+        category: 'furniture',
+        name: 'Sofa in Crushed Gravel',
+        quantity: 1,
+        url: 'https://www.example.com/product/path',
+        image_url: 'https://www.example.com/product/path.jpg'
+      });
+    }
+        
+    function productRemoved() {
+      analytics.track('Product Removed', {
+        cart_id: 'skdjsidjsdkdj29j',
+        product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
+        sku: 'SF-CG-3-LO-DW',
+        category: 'furniture',
+        name: 'Sofa in Crushed Gravel',
+        quantity: 1,
+        url: 'https://www.example.com/product/path',
+        image_url: 'https://www.example.com/product/path.jpg'
+      });
+    }
+      
+      
     </script>
 </body> 
 </html>
