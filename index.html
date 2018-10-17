@@ -35,8 +35,11 @@
 </form> 
     <button onclick="productListViewed()">Click me to generate fake Product List Viewed Event</button>
     <button onclick="productViewed()">Click me to generate fake Product Viewed Event</button>
-    <button onclick="productAdded()">Product Added Event</button>
-    <button onclick="productRemoved()">Product Removed Event</button>
+    <button onclick="productOneAdded()">Product 1 Added Event</button>
+    <button onclick="productTwoAdded()">Product 2 Added Event</button>
+    <button onclick="productOneRemoved()">Product Removed Event</button>
+    <button onclick="productTwoRemoved()">Product Removed Event</button>
+    <button onclick="orderCompleted()">Order Completed Event</button>
 
     <script type="text/javascript">
         
@@ -62,51 +65,92 @@
             window.location.href = "";
         });
       }
-        
-      function productListViewed(){
-        analytics.track('Product List Viewed', {
-          list_id: 'dummy_deals_1',
-          category: 'dummyProducts'
-        });
-      }
-        
-      function productViewed(){
-        analytics.track('Product Viewed', {
-          product_id: '109jfg7xx6s000f',
-          sku: 'G-1000',
-          category: 'Super Awesome Products Category',
-          name: 'Monoploy: 3rd Edition',
-          price: 18.99,
-          currency: 'usd'
-        });
-      }
 
-    function productAdded() {
-      analytics.track('Product Added', {
-        cart_id: 'skdjsidjsdkdj29j',
-        product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
-        sku: 'SF-CG-3-LO-DW',
-        category: 'furniture',
-        name: 'Sofa in Crushed Gravel',
-        quantity: 1,
-        url: 'https://www.example.com/product/path',
-        image_url: 'https://www.example.com/product/path.jpg'
-      });
-    }
-        
-    function productRemoved() {
-      analytics.track('Product Removed', {
-        cart_id: 'skdjsidjsdkdj29j',
-        product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
-        sku: 'SF-CG-3-LO-DW',
-        category: 'furniture',
-        name: 'Sofa in Crushed Gravel',
-        quantity: 1,
-        url: 'https://www.example.com/product/path',
-        image_url: 'https://www.example.com/product/path.jpg'
-      });
-    }
-      
+        function productOneAdded() {
+          analytics.track('Product Added', {
+            cart_id: 'skdjsidjsdkdj29j',
+            product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
+            sku: 'SF-CG-3-LO-DW',
+            category: 'furniture',
+            name: 'Sofa in Crushed Gravel',
+            quantity: 1,
+            url: 'https://www.example.com/product/path',
+            image_url: 'https://www.example.com/product/path.jpg'
+          });
+        }
+
+        function productTwoAdded() {
+          analytics.track('Product Added', {
+            cart_id: 'skdjsidjsdkdj29j',
+            product_id: 'bd32af80-7cf2-431e-859a-95fcb0zz123',
+            sku: 'SF-CG-3-AH-DW',
+            category: 'furniture',
+            name: 'Sofa in Awful Velvet',
+            quantity: 1,
+            url: 'https://www.example.com/product/path2',
+            image_url: 'https://www.example.com/product/path2.jpg'
+          });
+        }
+
+        function productOneRemoved() {
+          analytics.track('Product Added', {
+            cart_id: 'skdjsidjsdkdj29j',
+            product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
+            sku: 'SF-CG-3-LO-DW',
+            category: 'furniture',
+            name: 'Sofa in Crushed Gravel',
+            quantity: 1,
+            url: 'https://www.example.com/product/path',
+            image_url: 'https://www.example.com/product/path.jpg'
+          });
+        }
+
+        function productTwoRemoved() {
+          analytics.track('Product Added', {
+            cart_id: 'skdjsidjsdkdj29j',
+            product_id: 'bd32af80-7cf2-431e-859a-95fcb0zz123',
+            sku: 'SF-CG-3-AH-DW',
+            category: 'furniture',
+            name: 'Sofa in Awful Velvet',
+            quantity: 1,
+            url: 'https://www.example.com/product/path2',
+            image_url: 'https://www.example.com/product/path2.jpg'
+          });
+        }
+
+        function orderCompleted() {
+          analytics.track('Order Completed', {
+            checkout_id: 'fksdjfsdjfisjf9sdfjsd9f',
+            order_id: '50314b8e9bcf000000000000',
+            total: 700.00,
+            revenue: 90.00,
+            shipping: 30,
+            tax: 23,
+            currency: 'USD',
+            products: [
+              {
+                product_id: 'bd32af80-7cf2-431e-859a-95fcb038eb92',
+                sku: 'SF-CG-3-LO-DW',
+                name: 'Sofa in Crushed Gravel',
+                price: 350,
+                quantity: 1,
+                category: 'furniture',
+                url: 'https://www.example.com/product/path',
+                image_url: 'https:///www.example.com/product/path.jpg'
+              },
+              {
+                product_id: 'bd32af80-7cf2-431e-859a-95fcb0zz123',
+                sku: 'SF-CG-3-AH-DW',
+                name: 'Sofa in Awful Velvet',
+                price: 350,
+                quantity: 1,
+                category: 'furniture',
+                url: 'https://www.example.com/product/path2',
+                image_url: 'https:///www.example.com/product/path2.jpg'
+              }
+            ]
+          });
+        }
       
     </script>
 </body> 
