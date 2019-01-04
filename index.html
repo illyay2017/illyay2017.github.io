@@ -13,6 +13,21 @@
       analytics.page();
       }}();
     </script>
+    
+    <script
+      src="https://unpkg.com/@segment/consent-manager@1.2.0/standalone/consent-manager.js"
+      integrity="sha256-N/wC00Ta5lCOuOSL3dT3NF9tb9roS8uxTPGQ2Iqe70cqo="
+      crossorigin="anonymous"
+      defer
+      data-container="#consent-manager-container"
+      data-writeKey="zmedNJsgTo8f11SUDrTYBsaNvhJqHyzn"
+      data-bannerContent="We use cookies (and other similar technologies) to collect data to improve your experience on our site."
+      data-bannerSubContent="You can change your preferences at any time."
+      data-preferencesDialogTitle="Website Data Collection Preferences"
+      data-preferencesDialogContent="We use data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site."
+      data-cancelDialogTitle="Are you sure you want to cancel?"
+      data-cancelDialogContent="Your preferences have not been saved. By continuing to use our website, you՚re agreeing to our Website Data Collection Policy.">
+    </script>
 
 </head> 
 <body> 
@@ -22,6 +37,7 @@
     
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
+<div id="consent-manager-container"></div>
 <form name="travel" onsubmit="identify(event)">
      What is your favorite travel destination?
     <input name="destination" required="" size="81" type="text"/> 
