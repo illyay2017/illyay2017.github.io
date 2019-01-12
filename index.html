@@ -55,6 +55,7 @@
     <button onclick="productOneRemoved()">Product Removed Event</button>
     <button onclick="productTwoRemoved()">Product Removed Event</button>
     <button onclick="orderCompleted()">Order Completed Event</button>
+    <button onclick="completedOrderGlossier()">Glossier Completed Order</button>
 
     <button onclick="pageViewed()">Click to trigger a page event</button>
 
@@ -171,6 +172,56 @@
               }
             ]
           });
+        }
+        
+        function completedOrderGlossier() { 
+          var form = document.getElementsByName("travel")[0];
+          var email = form["email"].value;
+          analytics.track('Completed Order', {
+              checkout_type: 'Legacy',
+              coupon: null,
+              currency: 'GBP',
+              discount: 0,
+              email: email,
+              non_interaction: 0,
+              order_id: 'GLO553783910',
+              products: [
+                {
+                  category: 'Makeup',
+                  id: 'BB-02',
+                  kit_id: 37,
+                  name: 'Boy Brow',
+                  price: 16,
+                  product_id: 54,
+                  quantity: 1,
+                  sku: 'BB-02',
+                  variant_id: 243,
+                },
+                {
+                  category: 'Makeup',
+                  id: 'HS-01',
+                  kit_id: 37,
+                  name: 'Haloscope',
+                  price: 22,
+                  product_id: 78,
+                  quantity: 1,
+                  sku: 'HS-01',
+                  variant_id: 252,
+                },
+              ],
+              promo_code: '',
+              revenue: 32,
+              samples: [
+                {
+                  sample_id: 'jmQndi4AF2q4mEkYmsSAs',
+                  sample_name: 'Glossier You Fragrance Sample',
+                },
+              ],
+              shipping: 0,
+              shopping_with_rep: false,
+              tax: 4.67,
+              total: 28,
+            });
         }
       
     </script>
