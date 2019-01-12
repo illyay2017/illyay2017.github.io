@@ -46,6 +46,8 @@
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
+    Order ID: <input name="orderId" placeholder="Order ID" required="" size="75" type="text"/> 
+    <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
     <button onclick="productListViewed()">Click me to generate fake Product List Viewed Event</button>
@@ -141,9 +143,12 @@
         }
 
         function orderCompleted() {
+          var form = document.getElementsByName("travel")[0];
+          var orderId = form["orderId"].value;
+
           analytics.track('Order Completed', {
             checkout_id: 'fksdjfsdjfisjf9sdfjsd9f',
-            order_id: '50314b8e9bcf000000000000',
+            order_id: orderId,
             total: 700.00,
             revenue: 90.00,
             shipping: 30,
@@ -177,6 +182,7 @@
         function completedOrderGlossier() { 
           var form = document.getElementsByName("travel")[0];
           var email = form["email"].value;
+          var orderId = form["orderId"].value;
           analytics.track('Completed Order', {
               checkout_type: 'Legacy',
               coupon: null,
@@ -184,7 +190,7 @@
               discount: 0,
               email: email,
               non_interaction: 0,
-              order_id: 'GLO553783910',
+              order_id: orderId,
               products: [
                 {
                   category: 'Makeup',
