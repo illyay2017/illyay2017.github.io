@@ -73,7 +73,7 @@
     <button onclick="orderCompleted()">Order Completed Event</button>
     <button onclick="completedOrderGlossier()">Glossier Completed Order</button>
 
-    <button onclick="pageViewed()">Click to trigger a page event</button>
+    <button onclick="pageViewed()">Click to trigger a page event with a vendorClaimedStatus property</button>
 
     <script type="text/javascript">
         
@@ -114,7 +114,7 @@
         }
 
         function pageViewed() {
-          analytics.page("Illya's Test Page");
+          analytics.page("Illya's Test Page", { vendorClaimedStatus: 'CLAIMED' });
         }
 
         function productTwoAdded() {
